@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Ngram</string>
+    <string name="title_activity_referencia">ReferenciaActivity</string>
+    <string name="hint_username">Nombre de usuario</string>
+    <string name="hint_password">Contraseña</string>
+    <string name="text_button_login">Login</string>
+    <string name="dont_have_account">¿No tienes cuenta?,</string>
+    <string name="create_here">crea una aqui</string>
+    <string name="hint_email">Correo</string>
+    <string name="hint_name">Nombre</string>
+    <string name="hint_user">Usuario</string>
+    <string name="hint_confirm_password">Confirmar contraseña</string>
+    <string name="text_button_createaccount">Unete</string>
+    <string name="toolbar_tittle_createaccount">Crear Cuenta</string>
+    <string name="username_card">asd</string>
+    <string name="firstword_card">Hace</string>
+    <string name="timecard_card">4 días</string>
+    <string name="likenumbercard_card">10 me gusta</string>
+    <string name="tab_search">Buscar</string>
+    <string name="tab_home">Home</string>
+    <string name="tab_profile">Yo</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="secondword_detail">Me Gusta</string>
+    <string name="titleimagedetail">\"Todo copas en la playa\"</string>
+    <string name="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ut elit ac enim auctor varius et at massa. Duis in congue neque, quis tempus eros. Ut in justo at arcu suscipit egestas. Nunc eget tristique felis, viverra porta tellus. Sed tempor viverra augue volutpat semper. Praesent sed turpis id dolor egestas feugiat in vitae mi. Fusce eleifend odio nec lectus commodo, sed malesuada libero efficitur.</string>
+    <string name="transitionname_picture">transitionnamepicture</string>
+</resources>
