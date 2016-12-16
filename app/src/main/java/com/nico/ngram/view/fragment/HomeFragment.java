@@ -2,6 +2,7 @@ package com.nico.ngram.view.fragment;
 
 
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -43,6 +44,18 @@ public class HomeFragment extends Fragment {
 
         PictureAdapterRecyclerView pictureAdapterRecyclerView = new PictureAdapterRecyclerView(buildPictures(), R.layout.cardview_picture, getActivity());
         picturesRecycler.setAdapter(pictureAdapterRecyclerView);
+
+        FloatingActionButton fab = (FloatingActionButton) view.findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                NewPostFragment newPostFragment = new NewPostFragment();
+                getActivity().getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.container, newPostFragment)
+                        .addToBackStack(null)
+                        .commit();
+            }
+        });
 
         return view;
     }
