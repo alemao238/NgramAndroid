@@ -11,9 +11,12 @@ public class Post {
     public String uid;
     public String author;
     public String imageUrl;
-    public HashMap<String, Object> timestampCreated;
+    public double timestampCreated;
 
-    public Post(String author, String imageUrl, HashMap<String, Object> timestampCreated) {
+    public Post() {
+    }
+
+    public Post(String author, String imageUrl, double timestampCreated) {
         this.author = author;
         this.imageUrl = imageUrl;
         this.timestampCreated = timestampCreated;
@@ -43,13 +46,11 @@ public class Post {
         this.imageUrl = imageUrl;
     }
 
-    public HashMap<String, Object> getTimestampCreated() {
+    public double getTimestampCreated() {
         return timestampCreated;
     }
 
-    public void setTimestampCreated(HashMap<String, Object> timestampCreated) {
+    public void setTimestampCreated(double timestampCreated) {
         this.timestampCreated = timestampCreated;
     }
-
-
 }
