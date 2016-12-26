@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "69396422415",
+    "firebase_url": "https://ngram-50c77.firebaseio.com",
+    "project_id": "ngram-50c77",
+    "storage_bucket": "ngram-50c77.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:69396422415:android:d842f8c6ef5ee9eb",
+        "android_client_info": {
+          "package_name": "com.nico.ngram"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "69396422415-jcv2vsju8pkl9nptn8r3rpb64g7ottmh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDj4Lceyi_K6M7WELXOYR-qwiiM4-FvQps"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

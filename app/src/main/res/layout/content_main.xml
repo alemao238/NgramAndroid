@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    tools:context="com.nico.ngram.LoginActivity"
-    android:background="@color/colorPrimary">
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@color/colorPrimary"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.nico.ngram.view.MainActivity"
+    tools:showIn="@layout/activity_main">
 
-    
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -29,12 +34,7 @@
                 android:background="@drawable/platzigram"
                 />
         </RelativeLayout>
-        
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="0.4"
-            android:fillViewport="true">
+
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -42,40 +42,19 @@
                 android:orientation="vertical"
                 android:padding="@dimen/padding_horizontal_login">
 
-                <android.support.design.widget.TextInputLayout
+                <com.facebook.login.widget.LoginButton
+                    android:id="@+id/btnLoginFb"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:theme="@style/EditTextWhite">
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp" />
 
-                    <android.support.design.widget.TextInputEditText
-                        android:id="@+id/username"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/hint_username"/>
-
-                </android.support.design.widget.TextInputLayout>
-
-
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:theme="@style/EditTextWhite">
-
-                    <android.support.design.widget.TextInputEditText
-                        android:id="@+id/password"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/hint_password"
-                        android:inputType="textPassword"/>
-
-                </android.support.design.widget.TextInputLayout>
-                
-                
                 <Button
-                    android:id="@+id/login"
+                    android:id="@+id/btnLoginEmail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/text_button_login"
+                    android:text="@string/text_button_login_email"
                     android:theme="@style/RaisedButtonDark"
                     />
 
@@ -109,9 +88,6 @@
             </LinearLayout>
 
 
-        </ScrollView>
-
     </LinearLayout>
 
-
-</android.support.design.widget.CoordinatorLayout>
+</RelativeLayout>
