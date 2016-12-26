@@ -2,6 +2,7 @@ package com.nico.ngram.view.fragment;
 
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
@@ -20,10 +21,13 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.ServerValue;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.nico.ngram.NgramApplication;
 import com.nico.ngram.R;
+import com.nico.ngram.model.Post;
 import com.nico.ngram.utils.Constants;
 import com.squareup.picasso.Picasso;
 
@@ -31,6 +35,7 @@ import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -46,6 +51,7 @@ public class NewPostFragment extends Fragment {
 
     NgramApplication app;
     StorageReference storageReference;
+    DatabaseReference postReference;
 
     public NewPostFragment() {
         // Required empty public constructor
@@ -63,6 +69,7 @@ public class NewPostFragment extends Fragment {
 
         app = (NgramApplication) getActivity().getApplicationContext();
         storageReference = app.getStorageReference();
+        postReference = app.getPostReference();
 
         btnTakePicture.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -125,9 +132,26 @@ public class NewPostFragment extends Fragment {
             @Override
             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                 Toast.makeText(getActivity(), taskSnapshot.getDownloadUrl().toString(), Toast.LENGTH_SHORT).show();
+
+                String imageUrl = taskSnapshot.getDownloadUrl().toString();
+                createNewPost(imageUrl);
+
             }
         });
 
+    }
+
+    private void createNewPost(String imageUrl) {
+        SharedPreferences prefs = getActivity().getSharedPreferences("USER", getActivity().MODE_PRIVATE);
+        String email = prefs.getString("email", "");
+        String enCodedEmail = email.replace(".", ",");
+
+        HashMap<String, Object> timeStampCreated = new HashMap<>();
+        timeStampCreated.put("timestamp", ServerValue.TIMESTAMP);
+
+        Post post = new Post(enCodedEmail, imageUrl, timeStampCreated);
+
+        postReference.push().setValue(post);
     }
 
     private File createImageFile() throws IOException{
